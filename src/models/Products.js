@@ -4,14 +4,15 @@ const Products = new mongoose.Schema({
     title:{
         type:String,
         required:true,
-        unique
+        unique:true
     },
     desc:{
         type:String,
         required:true
     },
     image:{
-        type:String
+        data:Buffer,
+        contentType:String
     },
     categories:{
         type:Array,

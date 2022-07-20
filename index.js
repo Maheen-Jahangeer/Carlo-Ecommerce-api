@@ -8,6 +8,7 @@ import cors from 'cors';
 
 import authRouter from './src/routes/auth.js';
 import userRouter from './src/routes/user.js';
+import productsRouter from './src/routes/products.js';
 
 const app = express();
 app.use(express.json());
@@ -32,6 +33,7 @@ mongoose.connect(options.db,(err)=> {
 
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/products', productsRouter);
 
 app.listen(options.host, () =>{ 
     console.log(`Server is running on port ${options.host}`)
